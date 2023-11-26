@@ -1,0 +1,54 @@
+{% extends "sign_base.html" %}
+
+{% block page_name %} Log In - Stopify {% endblock %}
+
+{% block page_title %} Log In to Stopify {% endblock %}
+
+{% block main_div_fields %} 
+
+    <div style="background-color: black; padding: auto; width: 70%; height: 55%; margin: auto;">
+        <form method="POST" style="height: 100%; width: 100%; background-color: black; display: flex; flex-direction: column; justify-content: space-evenly;">
+
+            <div style="background-color: black; display: flex; flex-direction: column; width: 90%; height: 25%; margin: auto;">
+                <div style="background-color: black; width: 100%; height: 50%; text-align: start;">
+                    <h2 id="email-username" style="color: white; width: 100%; padding-left: 30px;">
+                        Email or Username
+                    </h2>
+                </div>
+                <input type="text" name="email_username" class="credential-field" placeholder="Enter Email or Username" style="width: 88%; height: 50%; margin: auto;">
+            </div>
+            
+            <div style="background-color: black; display: flex; flex-direction: column; width: 90%; height: 25%; margin: auto;">
+                <div style="background-color: black; width: 100%; height: 50%; text-align: start;">
+                    <h2 id="email-username" style="color: white; width: 100%; padding-left: 30px;">
+                        Password
+                    </h2>
+                </div>
+                <input type="password" name="password" class="credential-field" placeholder="Enter Password" style="width: 88%; height: 50%; margin: auto;">
+            </div>
+
+            <div style="background-color: black; width: 60%; height: 10%; margin: auto;">
+                <button type="submit" class="button" id="log-in-button" style="width: 100%; height: 100%;"> Log In </button>
+            </div>
+        </form>
+
+        <div style="background-color: black; color: white; width: 65%; margin: auto; display: flex;">
+            <h4 style="width: 60%;">Forgot your password?</h4>
+            <a href="/sign-up" class="button-href" id="sign-up-href" style=" width: 40%; height: 100%; color: white">
+                <h4 style="color: white"> Reset Password </h4>
+            </a>
+        </div>
+
+        <div style="width: 100%; background-color: black;">
+            <hr color="grey">
+        </div>
+
+        <div style="background-color: black; color: white; width: 53%; margin: auto; display: flex;">
+            <h4 style="width: 70%;">Don't have an account?</h4>
+            <a href="/sign-up/" class="button-href" id="sign-up-href" style=" width: 30%; height: 100%; color: white">
+                <h4 style="color: white"> Sign Up </h4>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

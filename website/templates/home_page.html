@@ -1,0 +1,34 @@
+{% extends "home_base.html" %}
+
+{% block side_bar %}
+    {% for i in userdata %}
+        {% for u in userdata[i] %}
+            <div style="background-color: rgb(20, 20, 20); color: white; grid-row: auto; display: grid; grid-template-rows: 33% 33% 33%; grid-template-columns: 60% 40%; border-radius: 1rem;">
+                <img src="{{ userdata[i][u]['img'] }}" alt="https://i.scdn.co/image/ab67616d00001e02f705b14ca8b81af140d1f1d3" style=" width: 60%; height: 80%; border-radius: 0.25rem; grid-row: span 3; grid-column: 2; margin: auto;">
+                <h6 style="grid-row: 1; grid-column: 1; margin: auto;"> {{ userdata[i][u]['name'] }} </h6>
+                <h6 style="grid-row: 2; grid-column: 1; margin: auto;"> {{ userdata[i][u]['type'][:-1].capitalize() }} </h6>
+                <h6 style="grid-row: 3; grid-column: 1; margin: auto;"> {{ userdata[i][u]['authors_str'] }} </h6>
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
+
+{% block main_body %}
+    <div style="color: white; background-color: rgb(20, 20, 20); text-align: center; border-radius: 1rem; grid-column: span 4;">
+        <h2> Welcome {{ user }} </h2>
+    </div>
+    {% for i in userdata %}
+        {% for u in userdata[i] %}
+            <div style="background-color: rgb(30, 30, 30); color: white; grid-row: auto; display: grid; grid-template-rows: 60% 10% 10% 10% 10%; border-radius: 0.5rem;">
+                <img src="{{ userdata[i][u]['img'] }}" alt="https://i.scdn.co/image/ab67616d00001e02f705b14ca8b81af140d1f1d3" style=" width: 60%; height: 80%; border-radius: 0.25rem; grid-row: 1; margin: auto;">
+                <h6 style="grid-row: 2; margin: auto;"> {{ userdata[i][u]['name'] }} </h6>
+                <h6 style="grid-row: 3; margin: auto;"> {{ userdata[i][u]['type'][:-1].capitalize() }} </h6>
+                <h6 style="grid-row: 4; margin: auto;"> {{ userdata[i][u]['authors_str'] }} </h6>
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
+
+{% block play_back %}
+    Play-Back
+{% endblock %}

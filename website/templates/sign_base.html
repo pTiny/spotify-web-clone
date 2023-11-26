@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/sign_base.css')}}">
+    <title> {% block page_name %} Sign {% endblock %} </title>
+</head>
+<body>
+    <div style="background-color: black; border-radius: 2rem; text-align: center; width: 708px; height: 822px; min-height: 822px; margin: auto; margin-top: 5%;", id="main-frame-div">
+        <h1 style="color: white; padding-top: 4%;"> {% block page_title %} Sign {% endblock %} </h1>
+        <div style="padding: auto; width: 70%; margin: auto;">
+            <hr color="grey">
+        </div>
+
+        {% block main_div_fields %}
+            <div style="background-color: black; padding: auto; width: 70%; height: 55%; margin: auto;">
+                <h2 style="color: white; padding: auto;"> Credential Fields</h2>
+            </div>
+        {% endblock %}
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+body {
+    background-image: linear-gradient(rgb(35, 35, 35), black);
+    font-family: sans-serif;
+}
+
+#main-frame-div {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.credential-field {
+    color: white;
+    background-color: rgb(20, 20, 20);
+    font-weight: bold;
+    font-size: medium;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 2rem;
+    border-style: solid;
+}
+
+.button {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+    color: black;
+    background-color: rgb(29, 185, 84);
+    border-radius: 2rem;
+    border: none;
+}
