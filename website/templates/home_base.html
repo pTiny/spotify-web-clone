@@ -9,12 +9,12 @@
         <title> Home </title>
     </head>
 
-    <body style="background-color: black; display: flex; flex-direction: column;">
+    <body style="background-color: black; display: flex; flex-direction: column; row-gap: 4%;">
 
         <div style="width: 100vw; height: 90vh; background-color: black; display: grid; grid-template-rows: 10% 89%; grid-template-columns: 20% 79.3%; row-gap: 1%; column-gap: 0.7%;">
             
             <!-- Nav Bar -->
-            <div style="background-color: rgb(20, 20, 20); color: black; border-radius: 1rem; grid-row: 1; grid-column: span 2; display: inline-flex; justify-content: space-around; align-items: center;">
+            <div style="background-color: rgb(20, 20, 20); color: black; border-radius: 0.5rem; grid-row: 1; grid-column: span 2; display: inline-flex; justify-content: space-around; align-items: center;">
                 <div class="nav-bar-fields" style="height: 40%; width: 5%; display: flex; flex-direction: row;">
                     <a href="/user/home/" style="width: 100%; height: 100%; margin: auto;">
                         <button class="button" style="width: 100%; height: 100%;"> Home </button>
@@ -27,7 +27,7 @@
                 </div>
                 
                 <form method="POST" id="search">
-                    <input type="text" name="search" placeholder="Search" style="color: white; background-color: rgb(20, 20, 20); font-weight: bold; font-size: medium; padding-left: 5%; padding-right: 5%; border-radius: 2rem; border-style: solid; grid-row: span 3; grid-column: 1;">
+                    <input type="text" id="search-input" name="search" placeholder="Search" style="grid-row: span 3; grid-column: 1;">
                     <button type="submit" id="search-button" name="search-button" style="grid-row: 2; grid-column: 3;"> Search </button>
                 </form>
 
@@ -44,22 +44,25 @@
             </div>
 
             <!-- Left Sidebar -->
-            <div class="scrollable" style="background-color: rgb(20, 20, 20); color: white; border-radius: 1rem; grid-row: 2; grid-column: 1; display: flex; flex-direction: column; row-gap: 4%; overflow-y: auto;">
+            <div class="scrollable" style="background-color: rgb(20, 20, 20); color: white; border-radius: 0.5rem; grid-row: 2; grid-column: 1; display: flex; flex-direction: column; row-gap: 2%; overflow-y: auto;">
+                <div style="background-color: rgb(20, 20, 20); display: flex; flex-direction: row; justify-content: space-evenly;">
+                    <button class="side-card" style="width: 70px; height: 30px; color: white; margin: auto; border: none; border-radius: 5rem;"> Artists </button>
+                    <button class="side-card" style="width: 70px; height: 30px; color: white; margin: auto; border: none; border-radius: 5rem;"> Albums </button>
+                    <button class="side-card" style="width: 70px; height: 30px; color: white; margin: auto; border: none; border-radius: 5rem;"> Tracks </button>
+                </div>
                 {% block side_bar %}
                     <h2 style="color: white; padding: auto;"> Side Bar Content </h2>
                 {% endblock %}
             </div>
 
             <!-- Main Body -->
-            <div class="scrollable" style="background-color: rgb(20, 20, 20); color: white; border-radius: 1rem; grid-row: 2; grid-column: 2; display: grid; justify-content: space-evenly; grid-template-columns: 17% 17% 17% 17%; grid-template-rows: 10% repeat(11, 40%); row-gap: 4%; overflow-y: auto;">
-                {% block main_body %}
-                    <h2 style="color: white; padding: auto;"> Main Body Content </h2>
-                {% endblock %}
-            </div>
+            {% block main_body %}
+                <h2 style="color: white; padding: auto;"> Main Body Content </h2>
+            {% endblock %}
         </div>
 
         <!-- Play-Back -->
-        <div style="width: 100vw; height:10vh; background-color: black; color: white; border-radius: 1rem;">
+        <div style="width: 100vw; height:10vh; background-color: black; color: white; border-radius: 0.5rem;">
             {% block play_back %}
                 <h2 style="color: white; padding: auto;"> Playbar </h2>
             {% endblock %}
